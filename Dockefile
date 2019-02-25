@@ -1,0 +1,7 @@
+FROM python:3.6-slim
+ENV PYTHONUNBUFFERED=1
+ARG http_proxy=""
+ARG https_proxy=""
+RUN pip3 install -v opencv-python
+RUN apt-get update && \
+    apt-get install -y libglib2.0-0 libsm6 libxrender1 libfontconfig1 libxext6
